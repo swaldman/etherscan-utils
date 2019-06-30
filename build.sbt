@@ -4,16 +4,15 @@ lazy val root = (project in file(".")).settings(
   publishResolveSettings,
   organization := "com.mchange",
   name := mainProjectName,
-  version := "0.0.1",
-  scalaVersion := "2.12.6",
-  crossScalaVersions := Seq("2.10.7", "2.11.12", "2.12.6"),
+  version := "0.0.2",
+  scalaVersion := "2.12.8",
+  crossScalaVersions := Seq("2.10.7", "2.11.12", "2.12.8"),
   scalacOptions ++= Seq("-deprecation", "-feature", "-unchecked" /*, "-Xlog-implicits" */),
-  libraryDependencies += "com.mchange" %% "consuela" % "0.0.6",
-  libraryDependencies += "com.mchange" %% "mchange-commons-scala" % "0.4.6",
+  libraryDependencies += "com.mchange" %% "consuela" % "0.0.15",
   libraryDependencies += {
     CrossVersion.partialVersion(Keys.scalaVersion.value) match {
       case Some((2, 12)) => {
-        "com.typesafe.play" %% "play-json" % "2.6.9"
+        "com.typesafe.play" %% "play-json" % "2.6.13"
       }
       case Some((2, 11)) => {
         "com.typesafe.play" %% "play-json" % "2.5.18"
