@@ -4,11 +4,11 @@ lazy val root = (project in file(".")).settings(
   publishResolveSettings,
   organization := "com.mchange",
   name := mainProjectName,
-  version := "0.0.3",
+  version := "0.0.4",
   scalaVersion := "2.12.10",
   crossScalaVersions := Seq("2.10.7", "2.11.12", "2.12.10"),
   scalacOptions ++= Seq("-deprecation", "-feature", "-unchecked" /*, "-Xlog-implicits" */),
-  libraryDependencies += "com.mchange" %% "consuela" % "0.1.0",
+  libraryDependencies += "com.mchange" %% "consuela" % "0.2.0",
   libraryDependencies += {
     CrossVersion.partialVersion(Keys.scalaVersion.value) match {
       case Some((2, 12)) => {
