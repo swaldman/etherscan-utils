@@ -4,11 +4,11 @@ lazy val root = (project in file(".")).settings(
   publishResolveSettings,
   organization := "com.mchange",
   name := mainProjectName,
-  version := "0.1.0-SNAPSHOT",
+  version := "0.1.0",
   scalaVersion := "2.12.13",
   crossScalaVersions := Seq("2.10.7", "2.11.12", "2.12.13"),
   scalacOptions ++= Seq("-deprecation", "-feature", "-unchecked" /*, "-Xlog-implicits" */),
-  libraryDependencies += "com.mchange" %% "consuela" % "0.4.0-SNAPSHOT",
+  libraryDependencies += "com.mchange" %% "consuela" % "0.4.0",
   libraryDependencies += {
     CrossVersion.partialVersion(Keys.scalaVersion.value) match {
       case Some((2, 12)) => {
@@ -32,8 +32,8 @@ lazy val publishResolveSettings = {
   Seq(
     resolvers += ("releases" at nexusReleases),
     resolvers += ("snapshots" at nexusSnapshots),
-    resolvers += ("Scalaz Bintray Repo" at "http://dl.bintray.com/scalaz/releases"),
-    resolvers += ("Typesafe repository" at "http://repo.typesafe.com/typesafe/releases/"),
+    resolvers += ("Scalaz Bintray Repo" at "https://dl.bintray.com/scalaz/releases"),
+    resolvers += ("Typesafe repository" at "https://repo.typesafe.com/typesafe/releases/"),
     publishTo := {
       val v = version.value
       if (v.trim.endsWith("SNAPSHOT")) {
